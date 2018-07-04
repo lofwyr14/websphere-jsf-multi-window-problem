@@ -13,7 +13,7 @@ $ mvn clean package tomee:run
 Browse this URL: [http://localhost:8080/]()
 
 Follow the instructions on that page. 
-The sources can be found under [src/main/webapp/index.html]()
+The sources can be found under /src/main/webapp/index.html
 
 With that TomEE setup there should be no problem.
 
