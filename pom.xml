@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>eu.irian</groupId>
+  <artifactId>websphere-jsf-multi-window-problem</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>websphere-jsf-multi-window-problem</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <finalName>websphere-jsf-multi-window-problem</finalName>
+
+    <plugins>
+      <plugin>
+
+        <groupId>org.apache.openejb.maven</groupId>
+        <artifactId>tomee-maven-plugin</artifactId>
+        <version>1.7.1</version>
+        <configuration>
+          <tomeeVersion>1.7.1</tomeeVersion>
+          <tomeeHttpPort>8080</tomeeHttpPort>
+          <context>ROOT</context>
+        </configuration>
+
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.myfaces.core</groupId>
+      <artifactId>myfaces-api</artifactId>
+      <version>2.0.24</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+</project>

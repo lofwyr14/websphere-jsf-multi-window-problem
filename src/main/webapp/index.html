@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<body>
+
+<h1>websphere-jsf-multi-window-problem</h1>
+
+<h2>Welcome to this test page.</h2>
+
+<p>
+  <b>Note: To view this page correctly it must be run inside a JSF 2.0 (or higher) Application Server!</b>
+</p>
+
+<p>
+  To validate this problem, please load this page after deploying the application and do eventually a
+  &lt;SHIFT&gt; + reload.
+</p>
+<p>
+  You should see two i-frames with 2 counters numbers and one reload button per i-frame.
+</p>
+
+<iframe width="500" height="300" src="window1.xhtml" frameborder="3"></iframe>
+
+<iframe width="500" height="300" src="window2.xhtml" frameborder="3"></iframe>
+
+<p>
+  If a ViewExpiredException occurs, do the &lt;SHIFT&gt; + reload again.
+</p>
+<p>
+  Both counters should be 0, but other number may be okay.
+</p>
+<p>
+  Now click on "reload 1" or "reload 2" some times. Each click will reload the iframe the button is inside.
+  You see the counter of the iframe growing and the other one will only updated.
+  After some clicks you might be familiar with the simple logic...
+</p>
+<p>
+  Now click on "reload 2", more than 20 times without clicking "reload 1".
+</p>
+<p>
+  If you now using "reload 1" there a two possibilities:
+</p>
+<ol>
+  <li>
+    counter 1 will grow again, and counter 2 will be updated.
+  </li>
+  <li>
+    <b>Or, on Webphere WAS 8.5.5.13 an ViewExpiredException occur</b>
+  </li>
+</ol>
+
+<p>This works since MyFaces 2.0.6, because of this parameter:</p>
+
+<pre><code>&lt;context-param>
+  &lt;param-name>org.apache.myfaces.NUMBER_OF_SEQUENTIAL_VIEWS_IN_SESSION&lt;/param-name>
+  &lt;param-value>2&lt;/param-value>
+&lt;/context-param>
+</code></pre>
+
+<p>
+  The basic problem is described in the <a href="https://issues.apache.org/jira/browse/MYFACES-3117">MyFaces Jira</a>
+  declared as blocker.
+  It was solved over 7 years ago.
+</p>
+
+<p>
+  WAS 9.0.0.7 has not this problem.
+</p>
+
+
+</body>
+</html>

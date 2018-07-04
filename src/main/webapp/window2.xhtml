@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:body>
+  <div id="container">
+    <h2>2nd window</h2>
+    <h2>Counter 1 value: #{counter.counter1}</h2>
+    <h2>Counter 2 value: #{counter.counter2}</h2>
+    <h:form>
+      <h:commandButton value="Reload 2" action="#{counter.reload2}"/>
+      <h:messages showDetail="true" showSummary="false"/>
+    </h:form>
+  </div>
+</h:body>
+</html>
