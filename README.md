@@ -2,6 +2,20 @@
 
 Code example to validate a problem with multi-windows / multi-tabs in JSF applications.
 
+> **update 2018-08-22: solved**
+>
+> There is fix from IBM at  
+> http://www-01.ibm.com/support/docview.wss?uid=swg1PI27290
+> 
+> insert this into the web.xml
+<pre>
+  &lt;context-param>
+    &lt;param-name>com.ibm.ws.jsf.enableRemoveRestoredViewState&lt;/param-name>
+    &lt;param-value>true&lt;/param-value>
+  &lt;/context-param>
+</pre>
+
+
 Build with:
 * Java Version: 1.8.0_162
 * Apache Maven: 3.5.3

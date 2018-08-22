@@ -16,6 +16,25 @@
 
 
 
+
+  <!-- update 2018-08-22 BEGIN -->
+
+  <!--
+  this parameter fixes the problem
+  See: http://www-01.ibm.com/support/docview.wss?uid=swg1PI27290
+  But they don't tell, how the fix works
+   -->
+  <context-param>
+    <param-name>com.ibm.ws.jsf.enableRemoveRestoredViewState</param-name>
+    <param-value>true</param-value>
+  </context-param>
+
+  <!-- update 2018-08-22 END -->
+
+
+
+
+
   <context-param>
     <param-name>javax.faces.PROJECT_STAGE</param-name>
     <param-value>Development</param-value>
